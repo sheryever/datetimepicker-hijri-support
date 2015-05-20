@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<link href="~/Scripts/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+
+<div class="container">
+    <h1>Simple datetime picker</h1>
+    <div class="row">
+        <div class='col-sm-6'>
+            <input type='text' class="form-control" id='datetimepicker4'/>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/moment-hijri-Original-Updated.js"></script>   
+
+    <script src="~/Scripts/bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker4').datetimepicker(
+        {
+            locale: 'ar-sa',
+            format: 'DD/MM/YYYY'
+        });
+
+        //$('#datetimepicker4').datetimepicker(
+        //{
+        //});
+
+    });
+</script>
+
+
+
+}
