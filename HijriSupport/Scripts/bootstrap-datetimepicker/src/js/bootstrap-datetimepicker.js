@@ -534,8 +534,8 @@
                 }
 
                 while (!startYear.isAfter(endYear, 'y')) {
-                    html += '<span data-action="selectYear" class="year' + (startYear.hYear() === date.hYear() ? ' active' : '') + (!isValid(startYear, 'y') ? ' disabled' : '') + '">' + startYear.year() + '</span>';
-                    startYear.add(1, 'y');
+                    html += '<span data-action="selectYear" class="year' + (startYear.hYear() === date.hYear() ? ' active' : '') + (!isValid(startYear, 'y') ? ' disabled' : '') + '">' + startYear.hYear() + '</span>';
+                    startYear.add(1, 'hYear');
                 }
 
                 yearsView.find('td').html(html);
@@ -600,9 +600,80 @@
                 daysView.find('tbody').empty().append(html);
 
                 updateMonths();
+                if (options.locale === 'ar-sa') {
+                    updateHijriYears();
+                } else {
+                    updateYears();
+                }
 
-                updateYears();
             },
+
+            fillHijriDate = function () {
+                var daysView = widget.find('.datepicker-days'),
+                    daysViewHeader = daysView.find('th'),
+                    currentDate,
+                    html = [],
+                    row,
+                    clsName;
+
+                if (!hasDate()) {
+                    return;
+                }
+
+                daysView.find('.disabled').removeClass('disabled');
+                daysViewHeader.eq(1).text(viewDate.format(options.dayViewHeaderFormat));
+
+                if (!isValid(viewDate.clone().subtract(1, 'M'), 'M')) {
+                    daysViewHeader.eq(0).addClass('disabled');
+                }
+                if (!isValid(viewDate.clone().add(1, 'M'), 'M')) {
+                    daysViewHeader.eq(2).addClass('disabled');
+                }
+
+                currentDate = viewDate.clone().startOf('M').startOf('week');
+
+                while (!viewDate.clone().endOf('M').endOf('w').isBefore(currentDate, 'd')) {
+                    if (currentDate.weekday() === 0) {
+                        row = $('<tr>');
+                        if (options.calendarWeeks) {
+                            row.append('<td class="cw">' + currentDate.week() + '</td>');
+                        }
+                        html.push(row);
+                    }
+                    clsName = '';
+                    if (currentDate.isBefore(viewDate, 'M')) {
+                        clsName += ' old';
+                    }
+                    if (currentDate.isAfter(viewDate, 'M')) {
+                        clsName += ' new';
+                    }
+                    if (currentDate.isSame(date, 'd') && !unset) {
+                        clsName += ' active';
+                    }
+                    if (!isValid(currentDate, 'd')) {
+                        clsName += ' disabled';
+                    }
+                    if (currentDate.isSame(moment(), 'd')) {
+                        clsName += ' today';
+                    }
+                    if (currentDate.day() === 0 || currentDate.day() === 6) {
+                        clsName += ' weekend';
+                    }
+                    row.append('<td data-action="selectDay" class="day' + clsName + '">' + currentDate.date() + '</td>');
+                    currentDate.add(1, 'd');
+                }
+
+                daysView.find('tbody').empty().append(html);
+
+                updateMonths();
+                if (options.locale === 'ar-sa') {
+                    updateHijriYears();
+                } else {
+                    updateYears();
+                }
+
+            },
+
 
             fillHours = function () {
                 var table = widget.find('.timepicker-hours table'),
