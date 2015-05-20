@@ -188,44 +188,6 @@
     <Content Include="Scripts\bootstrap-datetimepicker\test\publicApiSpec.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\config" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\description" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\FETCH_HEAD" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\HEAD" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\hooks\applypatch-msg.sample" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\hooks\commit-msg.sample" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\hooks\post-update.sample" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\hooks\pre-applypatch.sample" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\hooks\pre-commit.sample" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\hooks\pre-push.sample" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\hooks\pre-rebase.sample" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\hooks\prepare-commit-msg.sample" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\hooks\update.sample" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\index" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\info\exclude" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\logs\HEAD" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\logs\refs\heads\master" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\logs\refs\remotes\Eonasdan\development" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\logs\refs\remotes\Eonasdan\development-v3" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\logs\refs\remotes\Eonasdan\gh-pages" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\logs\refs\remotes\Eonasdan\issue212" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\logs\refs\remotes\Eonasdan\master" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\logs\refs\remotes\Eonasdan\version3" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\logs\refs\remotes\origin\HEAD" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\objects\pack\pack-89919a8d68dcf492cc41e387f8cd0e50f2638f21.idx" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\objects\pack\pack-89919a8d68dcf492cc41e387f8cd0e50f2638f21.pack" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\objects\pack\pack-d62d9269ac70865f5dfb5a0dfb74357b2b73e794.idx" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\objects\pack\pack-d62d9269ac70865f5dfb5a0dfb74357b2b73e794.pack" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\packed-refs" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\refs\heads\master" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\refs\remotes\Eonasdan\development" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\refs\remotes\Eonasdan\development-v3" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\refs\remotes\Eonasdan\gh-pages" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\refs\remotes\Eonasdan\issue212" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\refs\remotes\Eonasdan\master" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\refs\remotes\Eonasdan\version3" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\refs\remotes\origin\HEAD" />
-    <Content Include="Scripts\bootstrap-datetimepicker\.git\refs\tags\4.7.14" />
     <Content Include="Scripts\bootstrap-datetimepicker\.jscs.json" />
     <Content Include="Scripts\bootstrap-datetimepicker\.npmignore" />
     <Content Include="Scripts\bootstrap-datetimepicker\.travis.yml" />
@@ -300,8 +262,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\bootstrap-datetimepicker\.git\branches\" />
-    <Folder Include="Scripts\bootstrap-datetimepicker\.git\objects\info\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

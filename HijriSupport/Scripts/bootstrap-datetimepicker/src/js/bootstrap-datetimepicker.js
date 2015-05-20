@@ -514,6 +514,34 @@
                 yearsView.find('td').html(html);
             },
 
+            updateHijriYears = function () {
+                var yearsView = widget.find('.datepicker-years'),
+                    yearsViewHeader = yearsView.find('th'),
+                    startYear = viewDate.clone().subtract(5, 'hy'),
+                    endYear = viewDate.clone().add(6, 'hy'),
+                    html = '';
+
+                yearsView.find('.disabled').removeClass('disabled');
+
+                if (options.minDate && options.minDate.isAfter(startYear, 'y')) {
+                    yearsViewHeader.eq(0).addClass('disabled');
+                }
+
+                yearsViewHeader.eq(1).text(startYear.year() + '-' + endYear.year());
+
+                if (options.maxDate && options.maxDate.isBefore(endYear, 'y')) {
+                    yearsViewHeader.eq(2).addClass('disabled');
+                }
+
+                while (!startYear.isAfter(endYear, 'y')) {
+                    html += '<span data-action="selectYear" class="year' + (startYear.hYear() === date.hYear() ? ' active' : '') + (!isValid(startYear, 'y') ? ' disabled' : '') + '">' + startYear.year() + '</span>';
+                    startYear.add(1, 'y');
+                }
+
+                yearsView.find('td').html(html);
+            },
+
+
             fillDate = function () {
                 var daysView = widget.find('.datepicker-days'),
                     daysViewHeader = daysView.find('th'),
@@ -943,7 +971,12 @@
                 widget = getTemplate();
 
                 fillDow();
-                fillMonths();
+
+                if (options.locale === 'ar-sa') {
+                    fillHijriMonths();
+                } else {
+                    fillMonths();
+                }
 
                 widget.find('.timepicker-hours').hide();
                 widget.find('.timepicker-minutes').hide();
