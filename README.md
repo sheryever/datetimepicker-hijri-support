@@ -1,3 +1,3 @@
 # datetimepicker-hijri-support
 
-Test
+Add hijri date support in datetimepicker
